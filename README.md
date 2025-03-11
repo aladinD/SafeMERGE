@@ -5,53 +5,37 @@ Fine-tuning large language models (LLMs) on downstream tasks can inadvertently e
 
 ---
 
-## This Repo
-This repository provides a tool to perform SafeLoRA-based merging of adapters for transformer models. The approach leverages projection matrices computed from the difference between a base (unaligned) model and an aligned (safe) model to determine the appropriate mix between a finetuned adapter and a safety-tuned adapter.
-
----
-
 ## Overview
 The key idea is to use a projection matrix to measure how much a finetuned adapter's weights deviate from a safe reference. If the cosine similarity between the projected finetuned weights and the original weights falls below a specified threshold, a partial merge is applied (e.g., using weights `[0.8, 0.2]` for the finetuned and safe adapters, respectively). Otherwise, the finetuned adapter is used without adjustment.
 
 ### Why Qwen Models Are Handled Differently
-Qwen models have unique characteristics compared to other architectures like LLaMA. Specifically, Qwen models include additional parameters—such as biases—that are not part of the LoRA layers. These extra parameters often have shapes that do not match the expected 2D structure used for LoRA projections (e.g., 1D biases). As a result, when a Qwen model is detected (by checking if `"Qwen"` is present in the model path), the code **skips non-2D parameters** to ensure that only valid 2D LoRA parameters are processed during projection.
+Qwen models include additional parameters, such as biases, that are not part of the LoRA layers. These extra parameters often have shapes that do not match the expected 2D structure used for LoRA projections (e.g., 1D biases). As a result, when a Qwen model is detected, the code **skips non-2D parameters** to ensure that only valid 2D LoRA parameters are processed during projection.
 
 ---
 
 ## Files
 - **`utils.py`**  
-  Contains helper functions to compute projection matrices and cosine similarity between LoRA weight differences, and defines the `SafeLoRAMerger` class which encapsulates the merging logic.
+  Contains helper functions to compute projection matrices and cosine similarity between LoRA weight differences, and defines the `SafeLoRAMerger` class which encapsulates the merging logic. Merging is done 1:1 as in PEFT! 
 
 - **`get_safemerge_model.py`**  
-  A command-line script that loads the base model along with finetuned and safety adapters, computes the necessary projections, and then applies the SafeLoRA merging procedure before saving the final merged model.
+  A simple command-line script that computes the SafeMERGE model and saves it to an output directory.
 
 ---
 
 ## Requirements
 
-- **Python**  
-  Tested with Python 3.11.4
-
-- **PyTorch**  
-  Tested with PyTorch 2.4.1 + CUDA 12.1, which can be installed via:
-  ```bash
+Tested with Python 3.11.4 and PyTorch 2.4.1 + CUDA 12.1, which can be installed via:
+```bash
   pip install torch==2.4.1 torchvision==0.19.1 torchaudio==2.4.1 --index-url https://download.pytorch.org/whl/cu121
+```
 
-- **Remaining Requirements**  
-  Install the remaining repository requirements via pip:
-  ```bash
-  pip install -r requirements.txt
-  ```
+Install the remaining repository requirements via:
+```bash
+pip install -r requirements.txt
+```
 
 ## Usage Example
-Suppose you have the following models:
-- Base Model: "meta-llama/Llama-2-7b-chat-hf"
-- Finetuned Adapter: "my_hf_repo/llama_2_7b_chat_hf_gsm8k"
-- Safety Adapter: "my_hf_repo/llama_2_7b_chat_hf_gsm8k_safe"
-- Unaligned model (unsafe): "meta-llama/Llama-2-7b-hf"
-- Aligned model (safe): "meta-llama/Llama-2-7b-chat-hf"
 
-Run the script from the command line as follows:
 ```bash
     python get_safemerge_model.py \
     --base_model_id meta-llama/Llama-2-7b-chat-hf \
@@ -70,6 +54,6 @@ Run the script from the command line as follows:
 This command will:
 1. Load the base model.
 2. Load the finetuned and safety adapters. 
-3. Compute the SafeLoRA projection matrices from the specified unaligned and aligned models.
+3. Compute the safety subspace from the specified unaligned and aligned models.
 4. Merge the adapters based on the cosine similarity threshold (using partial merging if the similarity is below 0.35).
-5. Save the final merged model in the specified output directory.
+5. Save the final SafeMERGE model in the specified output directory.
