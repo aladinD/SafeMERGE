@@ -41,7 +41,7 @@ Qwen models have unique characteristics compared to other architectures like LLa
   Install the remaining repository requirements via pip:
   ```bash
   pip install -r requirements.txt
-
+  ```
 
 ## Usage Example
 Suppose you have the following models:

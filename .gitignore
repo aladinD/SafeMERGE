@@ -5,6 +5,7 @@ __pycache__/
 
 # Folders
 lm-evaluation-harness/
+safemerge_models/
 
 # C extensions
 *.so
