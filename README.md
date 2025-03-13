@@ -15,7 +15,7 @@
     </td>
     <td style="vertical-align: top;">
       <!-- <img src="safeMERGE.png" alt="SafeMERGE" style="max-width: 100%;"> -->
-      <img src="safeMERGE.png" alt="SafeMERGE" style="width: 400px; height: auto;">
+      <img src="safeMERGE.png" alt="SafeMERGE" style="width: 800px; height: auto;">
     </td>
   </tr>
 </table>
