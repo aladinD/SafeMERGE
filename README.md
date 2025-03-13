@@ -50,10 +50,12 @@
   safe behavior, measured by a cosine similarity criterion.
 </div>
 
-<!-- Image Section -->
-<div>
+<!-- Image Section (Centered) -->
+<!-- Image Section (Centered) -->
+<div style="text-align: center;">
   <img src="safeMERGE.png" alt="SafeMERGE" style="width: 70%; height: auto;">
 </div>
+
 
 
 
