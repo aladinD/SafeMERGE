@@ -21,7 +21,7 @@
 
 <table style="width: 100%; border-collapse: collapse;">
   <tr>
-    <td style="vertical-align: top;">
+    <td style="horizontal-align: top;">
       <div style="white-space: pre-wrap;">
 <strong>Abstract</strong> <br>
 Fine-tuning large language models (LLMs) on downstream <br>
@@ -34,7 +34,7 @@ safety-aligned model layers only when those deviate from safe <br>
 behavior, measured by a cosine similarity criterion.
       </div>
     </td>
-    <td style="vertical-align: left;">
+    <td style="horizontal-align: top;">
       <img src="safeMERGE.png" alt="SafeMERGE" style="max-width: 100%;">
     </td>
   </tr>
