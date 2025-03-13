@@ -65,7 +65,7 @@
       framework that preserves safety while maintaining task utility.<br>
       It achieves this by selectively merging fine-tuned and<br>
       safety-aligned model layers only when those deviate from safe<br>
-behavior, measured by a cosine similarity criterion.
+      behavior, measured by a cosine similarity criterion.
     </td>
     <td style="vertical-align: top; width: 50%;">
       <img src="safeMERGE.png" alt="SafeMERGE" style="transform: scale(2.0); transform-origin: top left;">
