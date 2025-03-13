@@ -21,26 +21,25 @@
 
 <table style="width: 100%; table-layout: fixed; border-collapse: collapse;">
   <colgroup>
+    <!-- Force two columns, each at 50% width -->
     <col style="width: 50%;">
     <col style="width: 50%;">
   </colgroup>
   <tr>
-    <td style="vertical-align: top; padding-right: 20px;">
-      <strong>Abstract</strong><br />
-      Fine-tuning large language models (LLMs) on downstream <br />
-      tasks can inadvertently erode their safety alignment, even <br />
-      for benign fine-tuning datasets. We address this challenge <br />
-      by proposing <strong>SafeMERGE</strong>, a post–fine-tuning <br />
-      framework that preserves safety while maintaining task utility. <br />
-      It achieves this by selectively merging fine-tuned and <br />
-      safety-aligned model layers only when those deviate from safe <br />
-      behavior, measured by a cosine similarity criterion.
+    <td style="vertical-align: top; padding: 0 1em 0 0;">
+      <strong>Abstract</strong><br>
+      Fine-tuning large language models (LLMs) on downstream tasks can inadvertently erode their safety alignment, 
+      even for benign fine-tuning datasets. We address this challenge by proposing 
+      <strong>SafeMERGE</strong>, a post–fine-tuning framework that preserves safety while maintaining task utility. 
+      It achieves this by selectively merging fine-tuned and safety-aligned model layers only when those deviate from 
+      safe behavior, measured by a cosine similarity criterion.
     </td>
-    <td style="vertical-align: top;">
-      <img src="safeMERGE.png" alt="SafeMERGE" style="max-width: 50%;">
+    <td style="vertical-align: top; padding: 0;">
+      <img src="safeMERGE.png" alt="SafeMERGE" style="width: 100%; height: auto;">
     </td>
   </tr>
 </table>
+
 
 
 
