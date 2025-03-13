@@ -40,7 +40,6 @@
 </table> -->
 
 
-<!-- Abstract Section -->
 <div style="margin-bottom: 1em;">
   <strong>Abstract</strong><br>
   Fine-tuning large language models (LLMs) on downstream tasks can inadvertently erode their safety alignment, 
@@ -50,11 +49,10 @@
   safe behavior, measured by a cosine similarity criterion.
 </div>
 
-<!-- Image Section (Centered) -->
-<!-- Image Section (Centered) -->
 <div style="text-align: center;">
   <img src="safeMERGE.png" alt="SafeMERGE" style="width: 70%; height: auto;">
 </div>
+
 
 
 
