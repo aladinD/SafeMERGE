@@ -75,7 +75,7 @@
   <strong>SafeMERGE</strong>, a post–fine-tuning framework that preserves safety while maintaining task utility. 
   It achieves this by selectively merging fine-tuned and safety-aligned model layers only when those deviate from 
   safe behavior, measured by a cosine similarity criterion.
-   <br>
+  <br><br>
 </div>
 
 <p align="center">
