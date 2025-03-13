@@ -70,7 +70,7 @@
       behavior, measured by a cosine similarity criterion. -->
     </td>
     <td style="vertical-align: top; width: 50%;">
-      <img src="safeMERGE.png" alt="SafeMERGE" style="transform: scale(2.0); transform-origin: top left;">
+      <img src="safeMERGE.png" alt="SafeMERGE" style="transform: scale(1.0); transform-origin: top left;">
     </td>
   </tr>
 </table>
