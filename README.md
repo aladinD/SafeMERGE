@@ -34,8 +34,8 @@ safety-aligned model layers only when those deviate from safe <br>
 behavior, measured by a cosine similarity criterion.
       </div>
     </td>
-    <td style="vertical-align: top;">
-      <img src="safeMERGE.png" alt="SafeMERGE" style="max-width: 10%;">
+    <td style="vertical-align: left;">
+      <img src="safeMERGE.png" alt="SafeMERGE" style="max-width: 100%;">
     </td>
   </tr>
 </table>
