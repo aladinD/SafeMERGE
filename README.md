@@ -40,7 +40,7 @@
 </table> -->
 
 
-<div style="margin-bottom: 1em;">
+<!-- <div style="margin-bottom: 1em;">
   <strong>Abstract</strong><br>
   Fine-tuning large language models (LLMs) on downstream tasks can inadvertently erode their safety alignment, 
   even for benign fine-tuning datasets. We address this challenge by proposing 
@@ -51,6 +51,20 @@
 
 <div style="text-align: center;">
   <img src="safeMERGE.png" alt="SafeMERGE" style="width: 70%; height: auto;">
+</div> -->
+
+
+<div style="margin-bottom: 1em;">
+  <strong>Abstract</strong><br>
+  Fine-tuning large language models (LLMs) on downstream tasks can inadvertently erode their safety alignment, 
+  even for benign fine-tuning datasets. We address this challenge by proposing 
+  <strong>SafeMERGE</strong>, a post–fine-tuning framework that preserves safety while maintaining task utility. 
+  It achieves this by selectively merging fine-tuned and safety-aligned model layers only when those deviate from 
+  safe behavior, measured by a cosine similarity criterion.
+</div>
+
+<div style="margin-top: 1em; text-align: center;">
+  <img src="safeMERGE.png" alt="SafeMERGE" style="display: block; margin: 0 auto; width: 70%; height: auto;">
 </div>
 
 
@@ -88,6 +102,8 @@ Install the repository requirements via:
 ```bash
 pip install -r requirements.txt
 ```
+
+---
 
 ## Usage Example
 
