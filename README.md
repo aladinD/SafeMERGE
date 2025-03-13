@@ -35,7 +35,7 @@ behavior, measured by a cosine similarity criterion.
       </div>
     </td>
     <td style="vertical-align: top;">
-      <img src="safeMERGE.png" alt="SafeMERGE" style="max-width: 50%;">
+      <img src="safeMERGE.png" alt="SafeMERGE" style="max-width: 10%;">
     </td>
   </tr>
 </table>
