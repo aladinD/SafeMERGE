@@ -17,9 +17,17 @@
   <br><br>
 </div>
 
-<p align="center">
+<!-- <p align="center">
   <img src="safeMERGE.png" alt="SafeMERGE" width="70%">
-</p>
+</p> -->
+
+<figure align="center" style="text-align: center;">
+  <img src="safeMERGE.png" alt="SafeMERGE" style="width: 70%; height: auto;">
+  <figcaption><em>SafeMERGE merges harmful and safe LoRAs if the layers deviate from safe behavior, measured by a projection-based cosine similarity.</em></figcaption>
+</figure>
+
+
+
 
 ---
 
