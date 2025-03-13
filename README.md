@@ -15,13 +15,25 @@ Fine-tuning large language models (LLMs) on downstream tasks can inadvertently e
 
 </div> -->
 
-<table>
+<!-- <table>
   <tr>
-    <td style="vertical-align: top; padding-right: 20px;">
+    <td style="vertical-align: top;">
       <strong>Abstract</strong><br>
       Fine-tuning large language models (LLMs) on downstream tasks can inadvertently erode their safety alignment, even for benign fine-tuning datasets. We address this challenge by proposing <strong>SafeMERGE</strong>, a post–fine-tuning framework that preserves safety while maintaining task utility. It achieves this by selectively merging fine-tuned and safety-aligned model layers only when those deviate from safe behavior, measured by a cosine similarity criterion.  
     </td>
     <td style="vertical-align: top;">
+      <img src="safeMERGE.png" alt="SafeMERGE" style="max-width: 100%;">
+    </td>
+  </tr>
+</table> -->
+
+<table style="border-collapse: collapse;">
+  <tr>
+    <td style="vertical-align: top; padding: 0 20px 0 0;">
+      <p style="margin: 0;"><strong>Abstract</strong></p>
+      <p style="margin: 0;">Fine-tuning large language models (LLMs) on downstream tasks can inadvertently erode their safety alignment, even for benign fine-tuning datasets. We address this challenge by proposing <strong>SafeMERGE</strong>, a post–fine-tuning framework that preserves safety while maintaining task utility. It achieves this by selectively merging fine-tuned and safety-aligned model layers only when those deviate from safe behavior, measured by a cosine similarity criterion.</p>
+    </td>
+    <td style="vertical-align: top; padding: 0;">
       <img src="safeMERGE.png" alt="SafeMERGE" style="max-width: 100%;">
     </td>
   </tr>
@@ -33,7 +45,7 @@ Fine-tuning large language models (LLMs) on downstream tasks can inadvertently e
 ## Overview
 The key idea is to use a projection matrix to measure how much a finetuned adapter's weights deviate from a safe reference. If the cosine similarity between the projected finetuned weights and the original weights falls below a specified threshold, a partial merge is applied (e.g., using weights `[0.8, 0.2]` for the finetuned and safe adapters, respectively). Otherwise, the finetuned adapter is used without adjustment.
 
-### Why Qwen Models Are Handled Differently
+### Implementational Note: Why Qwen Models Are Handled Differently
 Qwen models include additional parameters, such as biases, that are not part of the LoRA layers. These extra parameters often have shapes that do not match the expected 2D structure used for LoRA projections (e.g., 1D biases). As a result, when a Qwen model is detected, the code **skips non-2D parameters** to ensure that only valid 2D LoRA parameters are processed during projection.
 
 ---
