@@ -26,7 +26,7 @@
       Fine-tuning large language models (LLMs) on downstream tasks can inadvertently erode their safety alignment, even for benign fine-tuning datasets. We address this challenge by proposing <strong>SafeMERGE</strong>, a post–fine-tuning framework that preserves safety while maintaining task utility. It achieves this by selectively merging fine-tuned and safety-aligned model layers only when those deviate from safe behavior, measured by a cosine similarity criterion.
     </td>
     <td style="vertical-align: top;">
-      <img src="safeMERGE.png" alt="SafeMERGE" style="transform: scale(1.5); transform-origin: top left;">
+      <img src="safeMERGE.png" alt="SafeMERGE" style="transform: scale(2.0); transform-origin: top left;">
     </td>
   </tr>
 </table>
