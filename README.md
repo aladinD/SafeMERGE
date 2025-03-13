@@ -7,15 +7,7 @@
 
 </div>
 
-<!-- ## Abstract
-Fine-tuning large language models (LLMs) on downstream tasks can inadvertently erode their safety alignment, even for benign fine-tuning datasets. We address this challenge by proposing **SafeMERGE**, a post–fine-tuning framework that preserves safety while maintaining task utility. It achieves this by selectively merging fine-tuned and safety-aligned model layers *only* when those deviate from safe behavior, measured by a cosine similarity criterion. We evaluate SafeMERGE against other fine-tuning- and post–fine-tuning-stage approaches for Llama-2-7B-Chat and Qwen-2-7B-Instruct models on GSM8K and PubMedQA tasks while exploring different merging strategies. We find that SafeMERGE consistently reduces harmful outputs compared to other baselines without significantly sacrificing performance, sometimes even enhancing it. The results suggest that our selective, subspace-guided, and per-layer merging method provides an effective safeguard against the inadvertent loss of safety in fine-tuned LLMs while outperforming simpler post–fine-tuning-stage defenses.
-
-<div align="center">
-<img src="safeMERGE.png" align="center" alt="SafeMERGE">
-
-</div> -->
-
-<!-- <table>
+<table>
   <tr>
     <td style="vertical-align: top;">
       <strong>Abstract</strong><br>
@@ -25,28 +17,12 @@ Fine-tuning large language models (LLMs) on downstream tasks can inadvertently e
       <img src="safeMERGE.png" alt="SafeMERGE" style="max-width: 100%;">
     </td>
   </tr>
-</table> -->
-
-<table style="border-collapse: collapse;">
-  <tr>
-    <td style="vertical-align: top; padding: 0 20px 0 0;">
-      <p style="margin: 0;"><strong>Abstract</strong></p>
-      <p style="margin: 0;">Fine-tuning large language models (LLMs) on downstream tasks can inadvertently erode their safety alignment, even for benign fine-tuning datasets. We address this challenge by proposing <strong>SafeMERGE</strong>, a post–fine-tuning framework that preserves safety while maintaining task utility. It achieves this by selectively merging fine-tuned and safety-aligned model layers only when those deviate from safe behavior, measured by a cosine similarity criterion.</p>
-    </td>
-    <td style="vertical-align: top; padding: 0;">
-      <img src="safeMERGE.png" alt="SafeMERGE" style="max-width: 100%;">
-    </td>
-  </tr>
 </table>
-
 
 ---
 
 ## Overview
 The key idea is to use a projection matrix to measure how much a finetuned adapter's weights deviate from a safe reference. If the cosine similarity between the projected finetuned weights and the original weights falls below a specified threshold, a partial merge is applied (e.g., using weights `[0.8, 0.2]` for the finetuned and safe adapters, respectively). Otherwise, the finetuned adapter is used without adjustment.
-
-### Implementational Note: Why Qwen Models Are Handled Differently
-Qwen models include additional parameters, such as biases, that are not part of the LoRA layers. These extra parameters often have shapes that do not match the expected 2D structure used for LoRA projections (e.g., 1D biases). As a result, when a Qwen model is detected, the code **skips non-2D parameters** to ensure that only valid 2D LoRA parameters are processed during projection.
 
 ---
 
@@ -94,3 +70,8 @@ This command will:
 3. Compute the safety subspace from the specified unaligned and aligned models.
 4. Merge the adapters based on the cosine similarity threshold (using partial merging if the similarity is below 0.35).
 5. Save the final SafeMERGE model in the specified output directory.
+
+---
+
+### Implementational Note: Why Qwen Models Are Handled Differently
+Qwen models include additional parameters, such as biases, that are not part of the LoRA layers. These extra parameters often have shapes that do not match the expected 2D structure used for LoRA projections (e.g., 1D biases). As a result, when a Qwen model is detected, the code **skips non-2D parameters** to ensure that only valid 2D LoRA parameters are processed during projection.
