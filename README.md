@@ -46,7 +46,7 @@
 <table style="width: 100%; table-layout: fixed; border-collapse: collapse;">
   <tr>
     <td style="vertical-align: top; width: 50%;">
-      <!-- <div style="white-space: pre-wrap;">
+      <div style="white-space: pre-wrap;">
       <strong>Abstract</strong>
       Fine-tuning large language models (LLMs) on downstream 
       tasks can inadvertently erode their safety alignment, even 
@@ -56,8 +56,8 @@
       It achieves this by selectively merging fine-tuned and 
       safety-aligned model layers only when those deviate from safe 
       behavior, measured by a cosine similarity criterion.
-      </div> -->
-      <strong>Abstract</strong>
+      </div>
+      <!-- <strong>Abstract</strong>
       Fine-tuning large language models (LLMs) on downstream<br>
       tasks can inadvertently erode their safety alignment, even<br>
       for benign fine-tuning datasets. We address this challenge<br>
@@ -65,7 +65,7 @@
       framework that preserves safety while maintaining task utility.<br>
       It achieves this by selectively merging fine-tuned and<br>
       safety-aligned model layers only when those deviate from safe<br>
-      behavior, measured by a cosine similarity criterion.
+      behavior, measured by a cosine similarity criterion. -->
     </td>
     <td style="vertical-align: top; width: 50%;">
       <img src="safeMERGE.png" alt="SafeMERGE" style="transform: scale(2.0); transform-origin: top left;">
