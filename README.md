@@ -31,21 +31,18 @@
   </tr>
 </table> -->
 
-<table style="width: 100%; border-collapse: collapse;">
-  <colgroup>
-    <col style="width: 50%;">
-    <col style="width: 50%;">
-  </colgroup>
+<table style="width: 800px; border-collapse: collapse;">
   <tr>
-    <td>
+    <td style="vertical-align: top; width: 400px;">
       <strong>Abstract</strong><br>
-      Fine-tuning large language models (LLMs) on downstream tasks can inadvertently erode their safety alignment, even for benign fine-tuning datasets. We address this challenge by proposing <strong>SafeMERGE</strong>, a post–fine-tuning framework that preserves safety while maintaining task utility. It achieves this by selectively merging fine-tuned and safety-aligned model layers only when those deviate from safe behavior, measured by a cosine similarity criterion.
+      Fine-tuning large language models (LLMs) on downstream tasks can inadvertently erode their safety alignment...
     </td>
-    <td>
+    <td style="vertical-align: top; width: 400px;">
       <img src="safeMERGE.png" alt="SafeMERGE" style="transform: scale(2.0); transform-origin: top left;">
     </td>
   </tr>
 </table>
+
 
 
 
