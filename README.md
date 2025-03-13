@@ -57,7 +57,7 @@
       safety-aligned model layers only when those deviate from safe 
       behavior, measured by a cosine similarity criterion.
       </div> -->
-      <strong>Abstract</strong><br>
+      <strong>Abstract</strong>
       Fine-tuning large language models (LLMs) on downstream<br>
       tasks can inadvertently erode their safety alignment, even<br>
       for benign fine-tuning datasets. We address this challenge<br>
