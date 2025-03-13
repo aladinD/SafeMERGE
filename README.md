@@ -63,7 +63,7 @@
   safe behavior, measured by a cosine similarity criterion.
 </div>
 
-<div style="margin-top: 1em; text-align: center;">
+<div style="margin-top: 1em" align="center">
   <img src="safeMERGE.png" alt="SafeMERGE" style="display: block; margin: 0 auto; width: 70%; height: auto;">
 </div>
 
