@@ -2,8 +2,8 @@
 
 # SafeMERGE: Preserving Safety Alignment in Fine-Tuned Large Language Models via Selective Layer-Wise Model Merging
 
-[![Paper](http://img.shields.io/badge/paper-arxiv.1001.2234-B31B1B.svg)](https://www.nature.com/articles/nature14539)
-[![Conference](http://img.shields.io/badge/AnyConference-year-4b44ce.svg)](https://papers.nips.cc/paper/2020)
+[![Paper](https://img.shields.io/badge/paper-arxiv.2503.17239-%23B31B1B)](https://arxiv.org/abs/2503.17239)
+[![Conference](https://img.shields.io/badge/ICLR-2025-green)](https://iclr.cc/)
 
 </div>
 
